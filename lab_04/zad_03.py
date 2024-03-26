@@ -17,7 +17,9 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # b)
-mlp = MLPClassifier(hidden_layer_sizes=(6, 3), max_iter=2000, activation="relu")
+mlp = MLPClassifier(
+    hidden_layer_sizes=(6, 3), random_state=45, max_iter=500, activation="relu"
+)
 
 # c)
 mlp.fit(X_train, y_train)
